@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 
 export function init({ containerId, container, props = {} } = {}) {
-  loadContainer = container || document.getElementById(containerId);
+  let loadContainer = container || document.getElementById(containerId);
   ReactDOM.render(<App {...props} />, loadContainer);
 }
 export function clean({ container } = {}) {
