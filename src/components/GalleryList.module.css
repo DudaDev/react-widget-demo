@@ -1,0 +1,37 @@
+.image {
+  width: 190px;
+  height: 190px;
+  cursor: pointer;
+}
+
+.image:hover {
+  background-size: 115%;
+}
+
+.container {
+  max-width: 640px;
+}
+
+.imageContainer {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+.label {
+  position: absolute;
+  transform: translateY(100%);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.65);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer:hover .label {
+  transform: translateY(0);
+}

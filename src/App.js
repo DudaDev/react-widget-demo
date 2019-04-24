@@ -1,25 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./App.css";
+import { themes } from "./service";
+import Gallery from "./components/Gallery";
+import GalleryList from "./components/GalleryList";
+const { string, bool, oneOf } = PropTypes;
 
 class App extends Component {
+  static propTypes = {
+    theme: oneOf(themes),
+    bw: bool,
+    userName: string,
+    type: oneOf(["list", "gallery"]),
+    backToList: string
+  };
+
+  static defaultProps = {
+    userName: "My",
+    theme: "sports",
+    type: "list",
+    backToList: "Back to list"
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div>
+          <h2>{`Welcome to ${this.props.userName}'s galleries`}</h2>
+          {this.props.type === "gallery" ? (
+            <Gallery theme={this.props.theme} bw={this.props.bw} />
+          ) : (
+            <GalleryList
+              bw={this.props.bw}
+              backToList={this.props.backToList}
+            />
+          )}
+        </div>
       </div>
     );
   }

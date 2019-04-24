@@ -1,0 +1,6 @@
+.main {
+  background-size: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  transition: background-size 0.25s ease-in-out;
+}
