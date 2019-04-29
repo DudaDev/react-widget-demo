@@ -62,7 +62,8 @@
             });
         },
         clean: function(options) {
-
+            const container = options.container;
+            container.innerHTML = '';
         }
     }
     global.dmAPI.registerExternalWidget('chart', handler)
