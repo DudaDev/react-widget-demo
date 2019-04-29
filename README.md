@@ -1,6 +1,6 @@
 <img src=https://www.logosvgpng.com/wp-content/uploads/2018/04/duda-logo-vector.png height=50 width=75 />
 
-# A demo Duda widget with React
+# A demo Duda widget with React - No AMD (vanilla code)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
