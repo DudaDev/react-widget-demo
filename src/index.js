@@ -1,9 +1,5 @@
 (function(global){
 
-    const requirements = [
-        'https://code.highcharts.com/highcharts.js'
-    ];
-
     function drawChart(container, options) {
         $.getJSON(
             'https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/usdeur.json',
@@ -61,7 +57,7 @@
             const container = options.container;
             const props = options.props || {};
             container.setAttribute('style', 'min-width: 310px; height: 400px; margin: 0 auto');
-            dmAPI.loadScripts(requirements).then(function(){
+            dmAPI.loadScript('https://code.highcharts.com/highcharts.js').then(function(){
                 drawChart(container, props);
             });
         },

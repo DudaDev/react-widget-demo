@@ -12,13 +12,6 @@
                 },
                 loadScript: function(url) {
                     return new Promise(function (resolve) {$.getScript(url, resolve)});
-                },
-                loadScripts: function(urls) {
-                    return urls.reduce(function (acc, url) {
-                        return acc.then(function(){
-                            return dmAPI.loadScript(url)
-                        });
-                    }, Promise.resolve())
                 }
             };
             $.getScript('../src/index.js', function(){
