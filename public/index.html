@@ -1,0 +1,40 @@
+<html>
+    <head>
+            <script
+            src="https://code.jquery.com/jquery-3.4.0.min.js"
+            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+            crossorigin="anonymous"></script>
+        <script>
+            const widgets = {};
+            window.dmAPI = {
+                registerExternalWidget: function(name, handler) {
+                    widgets[name] = handler;
+                },
+                loadScript: function(url) {
+                    return new Promise(function (resolve) {$.getScript(url, resolve)});
+                },
+                loadScripts: function(urls) {
+                    return urls.reduce(function (acc, url) {
+                        return acc.then(function(){
+                            return dmAPI.loadScript(url)
+                        });
+                    }, Promise.resolve())
+                }
+            };
+            $.getScript('../src/index.js', function(){
+                widgets.chart.init({
+                    container: document.getElementById("container"),
+                    props: {
+                        areaFill: true,
+                        title: 'USD to EUR exchange rate over time',
+                        subtitle: 'Click and drag in the plot area to zoom in',
+                        zoomable: true
+                    }
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+</html>
