@@ -1,0 +1,19 @@
+{
+  "name": "duda-widget-no-amd",
+  "version": "1.0.0",
+  "description": "<img src=https://www.logosvgpng.com/wp-content/uploads/2018/04/duda-logo-vector.png height=50 width=75 />",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DudaDev/react-widget-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DudaDev/react-widget-demo/issues"
+  },
+  "homepage": "https://github.com/DudaDev/react-widget-demo#readme"
+}
