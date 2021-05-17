@@ -4,16 +4,17 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
-export function init({ containerId, container, props = {} } = {}) {
-  let loadContainer = container || document.getElementById(containerId);
-  ReactDOM.render(<App {...props} />, loadContainer);
+let loadContainer;
+export function init({ container, props = {} } = {}) {
+  loadContainer = container;
+  ReactDOM.render(<App {...props} />, container);
 }
-export function clean({ container } = {}) {
-  if (container) {
-    ReactDOM.unmountComponentAtNode(container);
+export function clean() {
+  if (loadContainer) {
+    ReactDOM.unmountComponentAtNode(loadContainer);
   }
 }
 
 if (process.env.NODE_ENV === "development") {
-  init({ containerId: "root" });
+  init({ container: document.getElementById("root") });
 }
