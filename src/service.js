@@ -1,8 +1,7 @@
 export const getImageSrc = ({ bw, theme, idx }) => {
   const cat = theme || "sports";
   const isbw = bw ? "g" : "c";
-  return `https://lorempixel.com/output/${cat}-q-${isbw}-600-600-${idx +
-    5}.jpg`;
+  return `https://picsum.photos/seed/picsum/600/600`
 };
 
 export const themes = ["sports", "nature", "animals", "city", "fashion"];
